@@ -1,13 +1,13 @@
-<?php 
+<?php
 
 function checkDurum()
 {
-  if (isset($_GET['durum'])) {
-    if ($_GET['durum'] == "ok")
-      echo '<b style="color:green;">İşlem Başarılı...</b>';
-    elseif ($_GET['durum'] == "no")
-      echo '<b style="color:red;"> İşlem Başarısız...</b>';
-  }
+    if (isset($_GET['durum'])) {
+        if ($_GET['durum'] == "ok")
+            echo '<b style="color:green;">İşlem Başarılı...</b>';
+        elseif ($_GET['durum'] == "no")
+            echo '<b style="color:red;"> İşlem Başarısız...</b>';
+    }
 }
 
 ?>
@@ -42,6 +42,7 @@ function checkDurum()
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    
 </head>
 
 <body class="nav-md">
@@ -76,30 +77,19 @@ function checkDurum()
                             <ul class="nav side-menu">
                                 <li><a href="index.php">
                                         <i class="fa fa-home"></i> Anasayfa </a></li>
-                                <li><a><i class="fa fa-home"></i> Home </a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="index.html">Dashboard</a></li>
-                                        <li><a href="index2.html">Dashboard2</a></li>
-                                        <li><a href="index3.html">Dashboard3</a></li>
-                                    </ul>
+                                <li><a href="urun.php"><i class="fa fa-home"></i> Ürün </a>
                                 </li>
-                                <li><a><i class="fa fa-desktop"></i> UI Elements </a>
+                                <li><a href="kategori.php"><i class="fa fa-desktop"></i> Kategori </a>
                                 </li>
-                                <li><a><i class="fa fa-table"></i> Tables </a>
-                                   
+                                <li><a href="sezon.php"><i class="fa fa-table"></i> Sezon </a>
+
                                 </li>
-                                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation </a>
-                                   
-                                </li>
-                                <li><a><i class="fa fa-clone"></i>Layouts </a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                    </ul>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Mağazalar </a>
+
                                 </li>
                             </ul>
                         </div>
-                       
+
 
                     </div>
                     <!-- /sidebar menu -->
@@ -151,7 +141,7 @@ function checkDurum()
                             </li>
 
                             <li role="presentation" class="dropdown">
-                                
+
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                     <li>
                                         <a>
