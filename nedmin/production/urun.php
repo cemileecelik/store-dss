@@ -10,7 +10,7 @@ $urunsor->execute();
 
 <div class="right_col" role="main">
   <div>
-    <p style="color: red; font-size: 20px;"> Lütfen Ürün Seçiniz.</p>
+    <p style="color: black; font-size: 20px;"> Ürün Bazında Mağazalara Göre Satış Yüzdelikleri</p>
 
     <form action="" method="POST">
       <div class="form-group row">
@@ -117,6 +117,7 @@ $urunsor->execute();
           drawMaterialChart();
         };
       </script>
+      
   </div>
 </div>
 

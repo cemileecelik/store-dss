@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Mağaza KDS </title>
+  <title> Mağaza KDS </title>
 
   <!-- Bootstrap -->
   <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,9 @@
 
 
             <h1>Yönetim Paneli </h1>
-
+            <div>
+              <input type="text" name="admin_adsoyad" class="form-control" placeholder="Ad Soyad" required="" />
+            </div>
             <div>
               <input type="text" name="admin_mail" class="form-control" placeholder="Kullanıcı Adınız (Mail)" required="" />
             </div>
@@ -45,12 +47,10 @@
               <input type="password" name="admin_password" class="form-control" placeholder="Şifreniz" required="" />
             </div>
             <div>
-              <button style="width: 100%; background-color: #73879C; color:white;" type="submit" name="adminlogin" class="btn btn-default"> Giriş Yap</button>
+              <button style="width: 100%; background-color: #73879C; color:white;" type="submit" name="adminregister" class="btn btn-default"> Kayıt Ol</button>
 
             </div>
-            <div>
-              <a href="register.php" style="width: 100%; background-color: #73879C; color:white;"  name="adminregister" class="btn btn-default"> Kayıt Ol</a>
-            </div>
+
             <div class="clearfix"></div>
 
             <div class="separator">
@@ -59,7 +59,6 @@
                 <?php
                 if (isset($_GET['durum'])) {
                 ?>
-             
 
                 <?php
 
@@ -81,7 +80,7 @@
             <br />
 
             <div>
-              <h1><i class="fa fa-paw"></i>Trend Butik </h1>
+              <h1><i class="fa fa-paw"></i> Addax KDS </h1>
             </div>
             </div>
           </form>

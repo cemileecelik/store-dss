@@ -4,6 +4,7 @@ require_once '../netting/connection.php';
 
 $urunsor = $db->prepare("Select * From urunler");
 $urunsor->execute();
+
 ?>
 
 
@@ -61,13 +62,11 @@ $urunsor->execute();
           </div>
         </div>
 
-        <!-- Bitiyor -->
-
-
 
 
       </div>
     </div>
+    
   </div>
   <!-- /page content -->
 

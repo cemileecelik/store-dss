@@ -9,9 +9,11 @@ $urunsor->execute();
 ?>
 <div class="right_col" role="main">
   <div>
-    <p style="color: red; font-size: 20px;"> Lütfen Ürün Seçiniz.</p>
+    <p style="color: red; font-size: 20px;"></p>
 
     <form action="" method="POST">
+    <p style="color: black; font-size: 20px;"> Kategorilere Ait Ürünlerin Yüzdelikleri</p>
+
       <div class="form-group row">
         <label for="kategoriler" class="col-sm-1 col-form-label"><h4>Ürün Seçiniz :</h4></label>
         <div class="col-sm-6">

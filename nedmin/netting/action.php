@@ -6,16 +6,65 @@ include 'connection.php';
 
 if (isset($_POST['adminlogin'])) {
 
-    echo $admin_mail = $_POST['admin_mail'];
-    echo $admin_password = md5($_POST['admin_password']);
+    // Kullanıcından gelen bilgieleri değişkene alma 
+    $admin_mail = htmlspecialchars($_POST['admin_mail']);
+    $admin_password = md5($_POST['admin_password']);
 
-    if ($admin_mail == "deneme@d.com" && $admin_password == "25d55ad283aa400af464c76d713c07ad") {
+    $kullanicisor = $db->prepare("select * from admin where admin_mail=:admin_mail and admin_password=:admin_password");
+    $kullanicisor->execute(array(
+        'admin_mail' => $admin_mail,
+        'admin_password' => $admin_password,
+    ));
 
+    $say = $kullanicisor->rowCount();
+    if ($say == 1) {
+
+        echo $_SESSION['admin_mail'] = $admin_mail;
         header("Location:../production/index.php");
+        exit;
     } else {
-        header("Location:../production/login.php?durum=no");
+        header("Location:../../?durum=basarisizgiris");
+       
     }
 }
+
+if (isset($_POST['adminregister'])) {
+
+    $admin_adsoyad = htmlspecialchars($_POST['admin_adsoyad']);
+    $admin_mail = htmlspecialchars($_POST['admin_mail']);
+    $admin_password = $_POST['admin_password'];
+
+    $kullanicisor = $db->prepare("select * from admin where admin_mail=:admin_mail");
+    $kullanicisor->execute(array(
+        'admin_mail' => $admin_mail
+    ));
+
+    $say = $kullanicisor->rowCount();
+
+    if ($say == 0) {
+
+        $password = md5($admin_password);
+
+        $kullanicikaydet = $db->prepare("INSERT INTO admin(admin_adsoyad,admin_mail,admin_password) VALUES(:admin_adsoyad,:admin_mail,:admin_password)");
+
+        $insert = $kullanicikaydet->execute(array(
+            'admin_adsoyad' => $admin_adsoyad,
+            'admin_mail' => $admin_mail,
+            'admin_password' => $password,
+        ));
+
+        if ($insert) {
+
+
+            header("Location:../production/login.php?durum=kayitbasarili");
+        } else {
+
+
+            header("Location:../../register.php?durum=basarisiz");
+        }
+    }
+}
+
 
 if (isset($_POST['getMagazaPie'])) {
     $stmt = $db->prepare("CALL `toplam_magaza_satıs_adedi`(?)");
